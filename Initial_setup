@@ -1,0 +1,37 @@
+##ssh -i /home/pranaybomma/Desktop/Tracer1.pem ec2-user@ec2-34-229-213-149.compute-1.amazonaws.com
+##aws sts assume-role --role-arn arn:aws:iam::716405217398:role/FlightTest_role --role-session-name test
+##Testing Assume role
+##https://tecadmin.net/install-python-3-7-on-centos/
+yum install gcc openssl-devel bzip2-devel 
+cd /usr/src
+wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+tar xzf Python-3.7.4.tgz
+cd Python-3.7.4
+./configure --enable-optimizations
+make altinstall
+
+
+rm /usr/src/Python-3.7.4.t
+
+cd /usr/local/bin
+
+ln -s /usr/local/bibn/python3.7 /bin/python3
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+
+cd /root/.local/bin
+mv pip3.7 /usr/local/bin
+cd /usr/local/bin
+ln -s /usr/local/bin/pip3.7 /bin/pip3
+pip3 install boto3
+
+aws sts assume-role --role-arn arn:aws:iam::716405217398:role/FlightTest_role --role-session-name test
+
+
+sudo apt install python3-django
+pip3 install django-cors-headers
+pip3 install djangorestframework
+sudo apt install npm
+npm install
+sudo apt-get install yarn
+npm run start
